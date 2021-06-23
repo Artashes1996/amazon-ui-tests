@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Testing Environment" parallel="tests" thread-count="1">
+    <test name="Amazon Tests">
+<packages>
+    <package name="amazon_tests"/>
+</packages>
+    </test>
+</suite>
+
+
+
+
