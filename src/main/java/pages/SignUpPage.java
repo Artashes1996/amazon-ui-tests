@@ -10,10 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpPage extends BasePage {
 
-    WebDriver webDriver;
-
-    protected WebDriverWait webDriverWait;
-
     public SignUpPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -29,9 +25,6 @@ public class SignUpPage extends BasePage {
 
     @FindBy(id = "ap_password_check")
     private WebElement reEnterPasswordElement;
-
-    @FindBy(id = "lostpwdaction__form_action0")
-    private WebElement confirmElement;
 
     @FindBy(id = "auth-create-account-link")
     private WebElement createAccountElement;
@@ -56,10 +49,6 @@ public class SignUpPage extends BasePage {
 
     public void fillValueInReEnterPasswordField(String value) {
         fillText(reEnterPasswordElement, value);
-    }
-
-    public void clickOnCreateAccountButton() {
-        clickOnElement(createAccountElement);
     }
 
     public void clickOnCreateYourAmazonAccountButton() {

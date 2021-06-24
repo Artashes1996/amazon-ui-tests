@@ -37,17 +37,8 @@ public class BasePage {
         return webElement.getText();
     }
 
-    public String getWebElementText(WebElement webElement) {
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        return (String) js.executeScript("return arguments[0].text;", webElement);
-    }
-
     public void waitToElementIsVisible(WebElement webElement) throws TimeoutException {
         this.webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
-    }
-
-    public void waitToElementsCount(By by, int number) throws TimeoutException {
-        this.webDriverWait.until(ExpectedConditions.numberOfElementsToBe(by, 0));
     }
 
     public boolean waitToTitleContains(String title) {
@@ -64,11 +55,4 @@ public class BasePage {
         webDriver.navigate().to(URL);
     }
 
-    public String getUrl() {
-        return webDriver.getCurrentUrl();
-    }
-
-    public void waitToLoaderIsNotDisplayed() {
-        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("whiteLoader")));
-    }
 }

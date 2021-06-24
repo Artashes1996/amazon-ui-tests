@@ -8,14 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class CardPage extends BasePage {
-    @FindBy(className = "acs-product-block")
-    private List<WebElement> emailFieldElement;
 
     @FindBy(id = "sc-active-cart")
     private WebElement cardHeaderElement;
-
-    @FindBy(id = "gc-order-form-recipients")
-    private WebElement toEmailElement;
 
     @FindBy(className = "sc-invisible-when-no-js")
     private WebElement deleteItemElement;
@@ -29,7 +24,7 @@ public class CardPage extends BasePage {
 
     public boolean getHeaderText(String value) throws InterruptedException {
         boolean bool = false;
-        if(getElementText(cardHeaderElement).contains(value)) {
+        if (getElementText(cardHeaderElement).contains(value)) {
             bool = true;
         }
         return bool;
