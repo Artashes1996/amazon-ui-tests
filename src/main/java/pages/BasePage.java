@@ -38,7 +38,7 @@ public class BasePage {
     }
 
     public String getWebElementText(WebElement webElement) {
-        JavascriptExecutor js = (JavascriptExecutor)webDriver;
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
         return (String) js.executeScript("return arguments[0].text;", webElement);
     }
 
@@ -55,7 +55,20 @@ public class BasePage {
         return true;
     }
 
+    public boolean waitToUrlContains(String partOfUrl) {
+        this.webDriverWait.until(ExpectedConditions.urlContains(partOfUrl));
+        return true;
+    }
+
     public void openUrl(String URL) {
         webDriver.navigate().to(URL);
+    }
+
+    public String getUrl() {
+        return webDriver.getCurrentUrl();
+    }
+
+    public void waitToLoaderIsNotDisplayed() {
+        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("whiteLoader")));
     }
 }

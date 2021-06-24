@@ -32,7 +32,7 @@ public class HomePage extends BasePage {
     private WebElement addCardButtonElement;
 
     @FindBy(id = "nav-cart")
-    private WebElement navCardButtonElement;
+    private WebElement navCartButtonElement;
 
     @FindBy(id = "nav-cart-count")
     private WebElement navCardCountElement;
@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
     @FindBy(id = " GLUXCountryListDropdown")
     private WebElement countryListDropDownElement;
 
-    @FindBy(id = "buy-now-button")
+    @FindBy(className = "qa-buy-now-button")
     private WebElement buyNowButtonElement;
 
     @FindBy(id = "p_n_condition-type/New")
@@ -102,16 +102,17 @@ public class HomePage extends BasePage {
         }
     }
 
-    public void clickOnNavCardButton() {
-        clickOnElement(navCardButtonElement);
+    public void clickOnNavCartButton() {
+        clickOnElement(navCartButtonElement);
     }
 
     public void clickOnSearchSubmitButton() {
         clickOnElement(searchSubmitButton);
     }
 
-    public String getCardCount() {
-        return getElementText(navCardButtonElement);
+    public String getCardCount() throws InterruptedException {
+        Thread.sleep(3000);
+        return getElementText(navCartButtonElement);
     }
 
 }

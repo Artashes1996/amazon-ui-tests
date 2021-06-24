@@ -26,7 +26,6 @@ public class BaseTest {
     public HomePage homePage;
     public LoginPage loginPage;
     public CardPage cardPage;
-    public BuyPage buyPage;
 
     protected WebDriver webDriver() {
         return driver.get();
@@ -42,7 +41,6 @@ public class BaseTest {
         homePage = PageFactory.initElements(webDriver(), HomePage.class);
         loginPage = PageFactory.initElements(webDriver(), LoginPage.class);
         cardPage = PageFactory.initElements(webDriver(), CardPage.class);
-        buyPage = PageFactory.initElements(webDriver(), BuyPage.class);
         webDriver().navigate().to(baseUrl);
     }
 
